@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diabetic Retinopathy Risk Checker</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-blue-200 via-purple-200 to-pink-200">
+  <div class="w-full max-w-lg mx-auto mt-10">
+    <div class="backdrop-blur-lg bg-white/70 rounded-2xl shadow-2xl p-10 mb-8 flex flex-col items-center border border-gray-200">
+      <h1 class="text-3xl font-extrabold mb-6 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">Diabetic Retinopathy Risk Checker</h1>
+      <form id="uploadForm" class="w-full flex flex-col items-center">
+        <label for="imageInput" class="mb-4 w-full flex flex-col items-center">
+          <span class="text-lg font-medium text-gray-700 mb-2">Upload Retina Image</span>
+          <input type="file" id="imageInput" accept="image/*" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" required />
+        </label>
+        <button type="submit" class="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white px-8 py-3 rounded-xl font-bold shadow-lg hover:scale-105 hover:bg-gradient-to-r hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 transition-all duration-200">Check Risk</button>
+      </form>
+      <div id="result" class="mt-8 text-center text-xl font-semibold"></div>
+    </div>
+    <div class="backdrop-blur-lg bg-white/60 rounded-xl shadow-lg p-6 mb-6 border border-gray-100">
+      <h2 class="text-2xl font-bold mb-2 text-blue-700">About Project</h2>
+      <p class="text-gray-700">This project uses AI to assess the risk of diabetic retinopathy from retina images. The model predicts risk level and probability to help early detection and intervention.</p>
+    </div>
+    <div class="backdrop-blur-lg bg-white/60 rounded-xl shadow-lg p-6 border border-gray-100">
+      <h2 class="text-2xl font-bold mb-2 text-blue-700">Team Info</h2>
+      <ul class="list-disc pl-5 text-gray-700">
+        <li>Zayed</li>
+        <li>Team Member 2</li>
+        <li>Team Member 3</li>
+      </ul>
+    </div>
+  </div>
+</body>
+  <style>
+    /* From Uiverse.io by SchawnnahJ */
+    .loader {
+      position: relative;
+      width: 2.5em;
+      height: 2.5em;
+      transform: rotate(165deg);
+    }
+    .loader:before, .loader:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 0.5em;
+      height: 0.5em;
+      border-radius: 0.25em;
+      transform: translate(-50%, -50%);
+    }
+    .loader:before {
+      animation: before8 2s infinite;
+    }
+    .loader:after {
+      animation: after6 2s infinite;
+    }
+    @keyframes before8 {
+      0% {
+        width: 0.5em;
+        box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+      }
+      35% {
+        width: 2.5em;
+        box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75);
+      }
+      70% {
+        width: 0.5em;
+        box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75);
+      }
+      100% {
+        box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+      }
+    }
+    @keyframes after6 {
+      0% {
+        height: 0.5em;
+        box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+      }
+      35% {
+        height: 2.5em;
+        box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75), -0.5em 0 rgba(233, 169, 32, 0.75);
+      }
+      70% {
+        height: 0.5em;
+        box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75), -0.5em 1em rgba(233, 169, 32, 0.75);
+      }
+      100% {
+        box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+      }
+    }
+    .loader {
+      position: absolute;
+      top: calc(50% - 1.25em);
+      left: calc(50% - 1.25em);
+    }
+  </style>
+  <script src="main.js"></script>
+</body>
+</html>
