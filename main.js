@@ -22,7 +22,7 @@ form.addEventListener('submit', async (e) => {
   resultDiv.textContent = 'Segmenting...';
 
   try {
-    const response = await fetch('http://127.0.0.1:5000/predict', {
+  const response = await fetch('/predict', {
       method: 'POST',
       body: formData
     });
